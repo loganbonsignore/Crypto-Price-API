@@ -32,7 +32,7 @@ purposes only](https://flask.palletsprojects.com/en/1.1.x/deploying/#deployment)
 You should now be able to send:
 
 ```bash
-curl localhost:5000/health
+curl localhost:8080/health
 ```
 
 And receive the response `OK` and status code `200`. 
@@ -50,7 +50,7 @@ docker build . -t flask-app
 To launch the containerised app, run:
 
 ```bash
-docker run -p 5000:5000 flask-app
+docker run -p 8080:8080 flask-app
 ```
 
 You should see your server boot up, and should be accessible as before.
