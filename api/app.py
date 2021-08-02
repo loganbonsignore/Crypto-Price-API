@@ -1,28 +1,22 @@
-from flask import Flask, Response, jsonify, request
+# app.py
+# description: aggregates cryptocurrency price data from ~7 different sources
 
+from flask import Flask, Response, make_response
+from .PriceOracle import PriceOracle
 from .errors import errors
 
 app = Flask(__name__)
 app.register_blueprint(errors)
-
-
-@app.route("/")
-def index():
-    return Response("Hello, world!", status=200)
-
-
-@app.route("/custom", methods=["POST"])
-def custom():
-    payload = request.get_json()
-
-    if payload.get("say_hello") is True:
-        output = jsonify({"message": "Hello!"})
-    else:
-        output = jsonify({"message": "..."})
-
-    return output
-
+price_api = PriceOracle()
 
 @app.route("/health")
 def health():
     return Response("OK", status=200)
+
+@app.route("/price/<pairs>")
+def price(pairs):
+    return_obj = {}
+    for pair in pairs.split(","):
+        symbol, currency = pair.split("_")
+        return_obj[pair.lower()] = price_api.collect_price_data(symbol, currency)
+    return make_response(return_obj, 200)
