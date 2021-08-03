@@ -3,9 +3,9 @@
 
 from requests import get
 from ray import remote
-from .generic_source import GenericSource
+from .base_source import BaseSource
     
-class Binance(GenericSource):
+class Binance(BaseSource):
     @remote
     def get_price(self, symbol:str, currency:str) -> dict or None:
         token_list_url = self.urls["binance"]["tokens"]
@@ -18,6 +18,6 @@ class Binance(GenericSource):
         response = get(price_url).json()
         try:
             price = response["price"]
-            return self.bundle_ouput("binance", price)
+            return self._bundle_ouput("binance", price)
         except KeyError:
             return None

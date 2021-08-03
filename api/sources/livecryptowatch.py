@@ -3,9 +3,9 @@
 
 from requests import post
 from ray import remote
-from .generic_source import GenericSource
+from .base_source import BaseSource
 
-class Livecoinwatch(GenericSource):
+class Livecoinwatch(BaseSource):
     @remote
     def get_price(self, symbol:str, currency:str) -> dict or None:
         response = post(
@@ -15,6 +15,6 @@ class Livecoinwatch(GenericSource):
         )
         try:
             price = response.json()["rate"]
-            return self.bundle_ouput("livecoinwatch", price)
+            return self._bundle_ouput("livecoinwatch", price)
         except KeyError:
             return None

@@ -17,8 +17,8 @@ def health():
 @app.route("/price/<pairs>")
 def price(pairs):
     return_obj = {}
-    return_obj["processed_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
     for pair in pairs.split(","):
         symbol, currency = pair.split("_")
         return_obj[pair.lower()] = price_api.collect_price_data(symbol, currency)
+    return_obj["processed_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
     return make_response(return_obj, 200)
