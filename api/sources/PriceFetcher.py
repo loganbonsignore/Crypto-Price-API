@@ -3,7 +3,7 @@
 
 from requests import get, post
 from ray import remote
-from .urls import urls
+from .source_config import urls
 
 class PriceFetcher:
     @remote
