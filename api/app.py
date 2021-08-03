@@ -18,8 +18,10 @@ def health():
 def price(pairs):
     return_obj = {}
     for pair in pairs.split(","):
-        if "_" not in pair: continue
-        symbol, currency = pair.split("_")
+        try:
+            symbol, currency = pair.split("_")
+        except ValueError:
+            continue
         return_obj[pair.lower()] = price_api.collect_price_data(symbol, currency)
     return_obj["processed_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
     return make_response(return_obj, 200)
