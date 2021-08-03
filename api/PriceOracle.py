@@ -2,7 +2,7 @@
 # description: class used in app.py
 
 import ray
-from sources.PriceFetcher import PriceFetcher
+from .sources.PriceFetcher import PriceFetcher
 
 ray.init(ignore_reinit_error=True, include_dashboard=False, log_to_driver=False)
 price_fetcher = PriceFetcher()
