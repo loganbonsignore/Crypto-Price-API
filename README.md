@@ -1,6 +1,6 @@
-# kylin-api
+# Kylin_API
 
-This repository provides a 'production-ready' Flask API returning crypto price data.
+This repository provides a 'production-ready' Flask API returning crypto price data from ~7 different sources.
 
 The API has been set up for use with Python >= 3.7 and [Docker](https://www.docker.com/). 
 
@@ -33,33 +33,33 @@ curl localhost:8080/health
 
 And receive the response `OK` and status code `200`. 
 
-## Running with `docker`
+## Running with docker
 
 Unsurprisingly, you'll need [Docker](https://www.docker.com/products/docker-desktop) 
 installed to run this project with Docker. To build a containerised version of the API, 
 run:
 
 ```bash
-docker build . -t flask-app
+docker build . -t kylin-api
 ```
 
 To launch the containerised app, run:
 
 ```bash
-docker run -p 8080:8080 flask-app
+docker run -p 8080:8080 kylin-api
 ```
 
 You should see your server boot up, and should be accessible as before.
 
-## Developing with the template
+## Testing the API
 
-To develop the template for your own project, you'll need to make sure to [create your
-own repository from this template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) 
-and then install the project's development dependencies. You can do this with:
+Testing the API is set up using `pytest`. To execute tests you can install the project's development dependencies with:
 
 ```bash
 pip install -r requirements/develop.txt
 ```
-
-This'll install some style formatting and testing tools (including `pytest` and 
-`locust`).
+Then from the root directory run:
+```bash
+pytest
+```
+This runs `test_api.py` which contains test functions. Add new funtions or files for extended testing functionality.
