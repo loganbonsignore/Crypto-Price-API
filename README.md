@@ -1,12 +1,8 @@
-# minimal-flask-api
+# kylin-api
 
-This [template repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
- provides a minimal configuration for a 'production-ready' Flask API 
-project. It includes a basic project structure and 'seed' files for functional and 
-non-function testing, a basic application structure (including error-handling 
-blueprint), and a few assorted 'getting started' files too.
+This repository provides a 'production-ready' Flask API returning crypto price data.
 
-The template has been set up for use with Python >= 3.7 and [Docker](https://www.docker.com/). 
+The API has been set up for use with Python >= 3.7 and [Docker](https://www.docker.com/). 
 
 ## Running locally
 
