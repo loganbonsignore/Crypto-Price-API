@@ -1,4 +1,4 @@
-# generic_source.py
+# base_source.py
 # description: class used in PriceOracle.py
 
 from .source_config import urls
