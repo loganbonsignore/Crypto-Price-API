@@ -3,8 +3,8 @@ urls = {
         "price": "https://api.pro.coinbase.com/products/{SYMBOL}-{CURRENCY}/ticker"
     },
     "coingecko": {
-            "tokens": "https://api.coingecko.com/api/v3/coins/list",
-            "price": "https://api.coingecko.com/api/v3/simple/price?ids={SYMBOL}&vs_currencies={CURRENCY}",
+        "tokens": "https://api.coingecko.com/api/v3/coins/list",
+        "price": "https://api.coingecko.com/api/v3/simple/price?ids={SYMBOL}&vs_currencies={CURRENCY}",
     },
     "binance": {
         "tokens": "https://api.binance.com/api/v3/exchangeInfo",
