@@ -1,5 +1,3 @@
-LIVECOINWATCH_API_KEY = "d960befc-10d2-4630-93cf-136f2e7f1558"
-
 urls = {
     "coinbase": {
         "price": "https://api.pro.coinbase.com/products/{SYMBOL}-{CURRENCY}/ticker"

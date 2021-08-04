@@ -4,7 +4,8 @@
 from requests import post
 from ray import remote
 from .base_source import BaseSource
-from .source_config import urls, LIVECOINWATCH_API_KEY
+from .source_config import urls
+from .config import LIVECOINWATCH_API_KEY
 
 class Livecoinwatch(BaseSource):
     def __init__(self):
