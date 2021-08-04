@@ -3,9 +3,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# user added
-.api/sources/config.py
-
 # C extensions
 *.so
 
