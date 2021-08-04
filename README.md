@@ -62,4 +62,4 @@ Then from the root directory run:
 ```bash
 pytest
 ```
-This runs `test_api.py` which contains test functions. Add new funtions or files for extended testing functionality.
+This runs `tests/test_api.py` which contains test functions. Add new funtions or files for extended testing functionality.
