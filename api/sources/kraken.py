@@ -16,6 +16,6 @@ class Kraken(BaseSource):
         response = get(url).json()
         try:
             price = response["result"]["price"]
-            return self._bundle_ouput("kraken", price)
+            return self.bundle_ouput("kraken", price)
         except (KeyError, TypeError):
             return None
