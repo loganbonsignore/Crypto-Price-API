@@ -17,5 +17,5 @@ class Kraken(BaseSource):
         try:
             price = response["result"]["price"]
             return self._bundle_ouput("kraken", price)
-        except KeyError:
+        except (KeyError, TypeError):
             return None

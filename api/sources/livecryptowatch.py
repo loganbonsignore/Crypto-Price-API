@@ -20,5 +20,5 @@ class Livecoinwatch(BaseSource):
         try:
             price = response.json()["rate"]
             return self._bundle_ouput("livecoinwatch", price)
-        except KeyError:
+        except (KeyError, TypeError):
             return None

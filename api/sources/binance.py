@@ -23,5 +23,5 @@ class Binance(BaseSource):
         try:
             price = response["price"]
             return self._bundle_ouput("binance", price)
-        except KeyError:
+        except (KeyError, TypeError):
             return None

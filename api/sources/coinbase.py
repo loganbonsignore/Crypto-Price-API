@@ -17,5 +17,5 @@ class Coinbase(BaseSource):
         try:
             price = response["price"]
             return self._bundle_ouput("coinbase", price)
-        except KeyError:
+        except (KeyError, TypeError):
             return None

@@ -17,5 +17,5 @@ class Cryptocompare(BaseSource):
         try:
             price = response[currency.upper()]
             return self._bundle_ouput("cryptocompare", price)
-        except KeyError:
+        except (KeyError, TypeError):
             return None

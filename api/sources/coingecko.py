@@ -25,5 +25,5 @@ class Coingecko(BaseSource):
         try:
             price = response[token["id"]][currency.lower()]
             return self._bundle_ouput("coingecko", price)
-        except KeyError:
+        except (KeyError, TypeError):
             return None
