@@ -1,5 +1,5 @@
 # base_source.py
-# description: class used in PriceOracle.py
+# description: class used in PriceApi.py
 
 from .source_config import urls
 

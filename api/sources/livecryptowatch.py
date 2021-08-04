@@ -1,10 +1,10 @@
 # livecryptowatch.py
-# description: class used in PriceOracle.py
+# description: class used in PriceApi.py
 
 from requests import post
 from ray import remote
 from .base_source import BaseSource
-from .source_config import urls
+from .source_config import urls, LIVECOINWATCH_API_KEY
 
 class Livecoinwatch(BaseSource):
     def __init__(self):
@@ -14,7 +14,7 @@ class Livecoinwatch(BaseSource):
     def get_price(self, symbol:str, currency:str) -> dict or None:
         response = post(
             url=self.price_url.format(SYMBOL=symbol,CURRENCY=currency),
-            headers={"x-api-key":"d960befc-10d2-4630-93cf-136f2e7f1558","content-type":"application/json"},
+            headers={"x-api-key":LIVECOINWATCH_API_KEY,"content-type":"application/json"},
             json={"currency":currency.upper(),"code":symbol.upper(),"meta":True},)
         try:
             price = response.json()["rate"]

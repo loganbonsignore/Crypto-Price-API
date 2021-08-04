@@ -2,11 +2,11 @@
 # description: aggregates cryptocurrency price data from ~7 different sources
 
 from flask import Flask, Response, make_response
-from .PriceOracle import PriceOracle
+from .PriceApi import PriceApi
 from datetime import datetime
 from .errors import errors
 
-price_api = PriceOracle()
+price_api = PriceApi()
     
 app = Flask(__name__)
 app.register_blueprint(errors)
@@ -15,7 +15,7 @@ app.register_blueprint(errors)
 def health():
     return Response("OK", status=200)
 
-@app.route("/price/<pairs>") # (ex: <pairs> == "btc_usd,eth_gbp,...")
+@app.route("/price/<pairs>")
 def price(pairs):
     return_obj = {}
     for pair in pairs.split(","):

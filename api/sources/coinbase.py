@@ -1,5 +1,5 @@
 # coinbase.py
-# description: class used in PriceOracle.py
+# description: class used in PriceApi.py
 
 from requests import get
 from ray import remote
