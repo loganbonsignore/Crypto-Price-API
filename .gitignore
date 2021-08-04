@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 
 # user added
-config.py
+.api/sources/config.py
 
 # C extensions
 *.so
