@@ -22,6 +22,6 @@ class Binance(BaseSource):
         response = get(price_url).json()
         try:
             price = response["price"]
-            return self.bundle_ouput("binance", price)
+            return self._bundle_ouput("binance", price)
         except (KeyError, TypeError):
             return None

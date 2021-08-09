@@ -16,6 +16,6 @@ class Coinbase(BaseSource):
         response = get(url).json()
         try:
             price = response["price"]
-            return self.bundle_ouput("coinbase", price)
+            return self._bundle_ouput("coinbase", price)
         except (KeyError, TypeError):
             return None

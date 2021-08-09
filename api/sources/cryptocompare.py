@@ -16,6 +16,6 @@ class Cryptocompare(BaseSource):
         response = get(url).json()
         try:
             price = response[currency.upper()]
-            return self.bundle_ouput("cryptocompare", price)
+            return self._bundle_ouput("cryptocompare", price)
         except (KeyError, TypeError):
             return None

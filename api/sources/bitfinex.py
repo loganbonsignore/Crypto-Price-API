@@ -16,6 +16,6 @@ class Bitfinex(BaseSource):
         response = get(url).json()
         try:
             price = response["result"]["price"]
-            return self.bundle_ouput("bitfinex", price)
+            return self._bundle_ouput("bitfinex", price)
         except (KeyError, TypeError):
             return None

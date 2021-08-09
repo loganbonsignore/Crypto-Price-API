@@ -19,6 +19,6 @@ class Livecoinwatch(BaseSource):
             json={"currency":currency.upper(),"code":symbol.upper(),"meta":True},)
         try:
             price = response.json()["rate"]
-            return self.bundle_ouput("livecoinwatch", price)
+            return self._bundle_ouput("livecoinwatch", price)
         except (KeyError, TypeError):
             return None
