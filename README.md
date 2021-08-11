@@ -1,4 +1,4 @@
-# Kylin_API
+# Crypto Price API
 
 This repository provides a 'production-ready' Flask API returning crypto price data from ~7 different sources.
 
